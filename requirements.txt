@@ -1,3 +1,9 @@
-Django
-django-celery
-setproctitle
+Django==1.4.3
+South==0.7.6
+distribute==0.6.24
+dj-database-url==0.2.1
+django-dajaxice==0.5.4.1
+dropbox==1.5.1
+psycopg2==2.4.6
+simplejson==3.0.7
+wsgiref==0.1.2
