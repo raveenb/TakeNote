@@ -1,0 +1,82 @@
+<!-- base.html -->
+{% load staticfiles %}
+
+<!DOCTYPE html> 
+<html>
+
+<head> 
+<title>TakeNote(Beta)</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="apple-touch-icon" href="{% static "images/logo.png" %}" />
+<link rel="apple-touch-startup-image" href="{% static "images/logo.png" %}" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+<style type="text/css">{% static "css/app.css" %}</style>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+
+{% block other_scripts %}<!-- base.html other scripts -->{% endblock %}
+</head>
+
+<body>
+{% block bodystart %}<!-- base.html bodystart -->
+<div data-role="page" id="main-page" data-title="TakeNotes(Beta)">
+{% endblock %}
+
+    {% block header %}<!-- base.html header -->
+    <div data-role="header" data-position="fixed" data-id="mynavbar">
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <a style="float:left;" data-role="button" data-inline="true" data-icon="home" data-theme="a" href="/home">Home</a>
+            </div>
+            <div class="ui-block-b" style="text-align:center;font-size:x-large">
+                TakeNote<sup><i>(Beta)</i></sup>
+            </div>
+            <div class="ui-block-c" data-iconpos="left">
+                <a href="/logout" data-role="button" data-transition="slidefade" data-inline="true" data-theme="a"data-icon="back" style="float:right;">Logout</a>
+            </div>
+        </div> <!-- /3 block grid -->
+        <div data-role="popup" id="add-lecture-popup">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <div data-role="content">               
+                <form action="/add_lecture/" method="post">
+                    <input type="text" data-min="true" placeholder="A New Lecture Name" name="name">
+                    <input type="submit" data-theme="b" data-mini="true" data-icon="check" data-inline="true" value="Save">
+                    <a data-theme="a" data-icon="delete" data-role="button" data-rel="back" data-mini="true" href="#" data-inline="true">Cancel</a>
+                </form>
+            </div>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="/home/" data-transition="slidefade">All Lectures</a></li>
+                <li><a href="#add-lecture-popup" data-transition="slidefade" data-rel="popup">Add New Lecture</a></li>
+                <li><a data-transition="slidefade" href="/settings">Pos2</a></li>
+            </ul>
+        </div><!-- /navbar -->      
+    </div><!-- /header -->
+    {% endblock %}
+
+    {% block content %}<!-- base.html content -->{% endblock %}
+
+    {% block footer %}<!-- base.html footer -->
+    <div data-role="footer" data-id="myfooter" data-theme='e' data-position="fixed">
+        <span class='advertisement'>Advertisement</span>
+    </div><!-- /footer -->      
+    {% endblock %}
+</div> <!-- /main-page -->
+
+{% block other_pages %}<!-- base.html other pages -->{% endblock %}
+
+<script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/apdrLlo0kCaMZMtu6zatpw.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+
+</body>
+</html>

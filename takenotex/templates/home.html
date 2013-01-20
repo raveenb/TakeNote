@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div data-role="collapsible-set">
+    {% for lecture, image_list in data.items %}
+        <div data-role="collapsible">
+        <h3>{{lecture}}</h3>
+        {% for image in image_list %}
+        <a href="{{ image.url }}" target="_blank">
+            <img src="{{ image.url }}" class="thumb" style="width:64px;height:64px;"/>
+        </a>
+        {% empty %}
+        No Images from Lecture
+        {% endfor %}
+        </div>
+    {% empty %}
+    No Lectures
+    {% endfor %}
+</div>
+{% endblock %}

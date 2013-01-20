@@ -129,8 +129,9 @@ INSTALLED_APPS = (
     'webapp',
     'gunicorn',
     'south',
-    'dajaxice',
     'django.contrib.webdesign',
+    'dropbox2',
+    'sendgrid'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -165,3 +166,21 @@ LOGGING = {
 #takenotex changes
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default='postgres://takenotex:takenotex@localhost:5432/takenotex')}
+
+DROPBOX_SETTINGS = { 'app_key' : "9u1yypa88u586mz", 'app_secret' : "ugsszrlnvbs7q7c", 'type' : "app_folder", }
+
+LOGIN_REDIRECT_URL = '/home'
+
+# LINKEDIN_APP_URL = 'http://localhost:8000'
+# LINKEDIN_RETURN_URL = LINKEDIN_APP_URL + 'login/authenticated/'
+LOGIN_URL='/login/'
+AUTH_PROFILE_MODULE = 'dropbox2.UserProfile'
+
+DROPBOX_KEY = '9u1yypa88u586mz'
+DROPBOX_SECRET = 'ugsszrlnvbs7q7c'
+DROPBOX_ACCESS = 'app_folder'
+
+SENDGRID_EMAIL_HOST = "smtp.sendgrid.net"
+SENDGRID_EMAIL_PORT = 587
+SENDGRID_EMAIL_USERNAME = "raveenb"
+SENDGRID_EMAIL_PASSWORD = "hello123"

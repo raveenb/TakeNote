@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="myPublisherDiv"></div>
+
+<script type="text/javascript">
+    filepicker.setKey('ALZKtavtiSAyw003AMFn8z');
+
+    var f = filepicker.pick(
+                {
+                    mimetypes: ['image/*'],
+                    services:['WEBCAM'],
+                },
+                function(FPFile){
+                    console.log(JSON.stringify(FPFile));
+                    $("#file").val(FPFile.url)
+                    $("#target").submit()
+                },
+                function(FPError){
+                    console.log(FPError.toString());
+                }
+            );
+</script>
+
+<form id="target" action="/add_image/" hidden="true" method="post">
+  <input type="hidden" name="lecture" value="{{lecture.id}}"/>
+  <input type="hidden" name="file" value="" id="file"/>
+  <input type="submit" name="submit" value="Go"/>
+</form>
+{% endblock %}

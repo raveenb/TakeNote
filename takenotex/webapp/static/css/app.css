@@ -1,0 +1,8 @@
+.thumb {
+    float:right;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:64px;
+    height:64px;    
+}

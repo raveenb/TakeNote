@@ -1,0 +1,64 @@
+<!-- begin.html -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block bodystart %}
+<div data-role="page" id="begin-page" data-title="TakeNote(Beta)">
+{% endblock %}
+
+{% block header %}<!-- begin.html header -->
+<div data-role="popup" id="about-popup">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+    <br>
+    <p>
+        <h4>TakeNote<sup><i>(Beta)</i></sup></h4>
+        <li>TakeNote<sup><i>(Beta)</i></sup> is a note taking app for students </li>
+        <li>1. The students login with their DropBox Account</li>
+        <li>2. Click Add Lecture</li>
+        <li>3. Snap Picture of the Blackboard from "any angle"</li>
+        <li>4. TakeNote<sup><i>(Beta)</i></sup> goes to work with the picture you just took with the app</li> 
+        <li>5. TakeNote<sup><i>(Beta)</i></sup> automatically selects the relevant sections of the black board and corrects fot the angle of the photo and gives you the image of the black board as if you were directly infront of the board</li>
+        <li>6. Once this is done, you get an email with url links to the DropBox folder where the files are saved</li>
+        <li>7. You can then share your notes with your fellow class mates using Dropbox and Facebook, right from the app(coming soon)</li>
+        <li>Enjoy and have fun</li>
+    </p>    
+</div>                   
+
+<div data-role="popup" id="credits-popup">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+    <br>
+    <p>
+        PennApps13 Hackathon
+        <li>Bernease Herman, UMich</li>
+        <li>James Hui, UPenn</li>
+        <li>Raven Beemsingh, LehighU</li>
+    </p>
+</div> <!-- credits-dialog -->
+
+<div data-role="header">
+    <div class="ui-grid-b">
+        <div class="ui-block-a">
+            <a data-rel="popup" href="#about-popup" data-role="button" data-transition="slidefade" data-inline="true" data-theme="a"data-icon="info">About</a> 
+        </div>
+        <div class="ui-block-b"></div>
+        <div class="ui-block-c" style="text-align:right">
+            <a data-rel="popup"  href="#credits-popup" data-role="button" data-transition="slidefade" data-inline="true" data-theme="a" data-icon="info">Credits</a> 
+        </div>
+    </div> <!-- 3 block grid -->
+</div><!-- /header -->
+{% endblock %}
+
+{% block content %}<!-- begin.html content -->
+<br><br><br><br>
+<img src='{% static "images/logo.png" %}' alt="logo" style="display:block;margin-left:auto;margin-right:auto;">
+<h1 style="text-align:center">TakeNote<sup><i>(Beta)</i></sup></h1>
+<div style="text-align:center">
+    <br>
+    <h3>Sign in with</h3>
+    <a href="/home" rel="external" data-role="button" data-mini="true">
+        <img src='{% static "images/login.png" %}' alt="login" style="width:15%;">
+    </a>
+    <br>
+    <p>The smart Note Taking app for students</p>
+</div>
+{% endblock %}

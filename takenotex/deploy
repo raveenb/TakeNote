@@ -1,5 +1,4 @@
 #/bin/bash
-source venv/bin/activate
 pip freeze > requirements.txt
 git remote -v
 git add .
@@ -8,8 +7,9 @@ git commit -m 'heroku deploy'
 git push heroku master
 
 heroku run python manage.py syncdb
-
 heroku run python manage.py migrate webapp
+heroku run python manage.py migrate dropbox2
+heroku run python manage.py migrate sendgrid
 
 echo "***********************************************************"
 echo "***********************************************************"

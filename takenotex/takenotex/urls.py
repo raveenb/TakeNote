@@ -1,8 +1,8 @@
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -13,5 +13,21 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
+    # (r'^accounts/login/$', 'django.contrib.auth.views.login'),
 )
+
+urlpatterns += patterns('webapp.views',
+    url(r'^$', 'start'),
+    url(r'^home/$', 'home'),
+    url(r'^add_lecture/$', 'add_lecture'),
+    url(r'^add_image/$', 'add_image'),
+    # url(r'^add_story_to_position/(?P<id>\d+)/$', 'add_story_to_position'),
+)
+
+urlpatterns += patterns('dropbox2.views',
+    url(r'^login/?$', 'oauth_login'),
+    url(r'^logout/?$', 'oauth_logout'),
+    url(r'^login/authenticated/?$', 'oauth_authenticated'),
+)
+
