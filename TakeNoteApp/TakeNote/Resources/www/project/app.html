@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            app
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"
+        />
+        <link href="res/lib/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="res/lib/jquerymobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.8.2.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.indexOf("Android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+            });
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.2.0/jquery.mobile-1.2.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/tiggzi.js">
+        </script>
+        <script type="text/javascript" src="res/lib/cordova.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="files/views/assets/js/SinlgyUtils.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/SinglyConnect.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="app" id="j_12" class="type-interior"
+        data-theme="a" data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="header" data-position="fixed" data-theme="a" name="mobileheader"
+            id="j_14" class='mobileHeader mobileheader2 '>
+                <h1 dsid="mobileheader">
+                    TakeNote
+                </h1>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="j_15" name="mobilecontainer" class="mobileContent mobilecontainer2"
+            dsid="mobilecontainer" data-theme=''>
+                <link href="app.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="app.js">
+                </script>
+                <!-- mobilesearchbar1_13 -->
+                <div data-role="fieldcontain" class="mobilesearchbar1 ">
+                    <div id="j_26-cover-div">
+                        <img id="j_26-cover-img" src="res/image/icon-search-cover.png" />
+                    </div>
+                    <input type="search" name="mobilesearchbar1_13" id="j_26" dsid="mobilesearchbar1_13"
+                    value="Search" data-theme="a" tabIndex="5" class='searchbarClass mobilesearchbar1 '
+                    />
+                </div>
+                <!-- mobilecollapsiblesetbean1_3 -->
+                <div data-role="collapsible-set" data-theme="a" data-content-theme=a data-collapsed-icon='plus'
+                data-expanded-icon='minus' name="mobilecollapsiblesetbean1_3" id="j_16" dsid="mobilecollapsiblesetbean1_3"
+                class=' mobilecollapsibleset1 '>
+                    <!-- mobilecollapsblock1 -->
+                    <div data-role="collapsible" id="j_17" name="mobilecollapsblock1_4" dsid="mobilecollapsblock1_4"
+                    data-collapsed='true' data-theme="a" data-content-theme="a" data-iconpos='left' class=' mobilecollapsblock1 '>
+                        <h3 id="j_18" name="mobilecollapsblockheader1_5" dsid="mobilecollapsblockheader1_5">
+                            Lecture - Date
+                        </h3>
+                    </div>
+                    <!-- mobilecollapsblock2 -->
+                    <div data-role="collapsible" id="j_20" name="mobilecollapsblock1_7" dsid="mobilecollapsblock1_7"
+                    data-collapsed='true' data-theme="a" data-content-theme="a" data-iconpos='left' class=' mobilecollapsblock2 '>
+                        <h3 id="j_21" name="mobilecollapsblockheader1_8" dsid="mobilecollapsblockheader1_8">
+                            Lecture - Date
+                        </h3>
+                    </div>
+                    <!-- mobilecollapsblock3 -->
+                    <div data-role="collapsible" id="j_23" name="mobilecollapsblock1_10" dsid="mobilecollapsblock1_10"
+                    data-collapsed='false' data-theme="a" data-content-theme="a" data-iconpos='left'
+                    class=' mobilecollapsblock3 '>
+                        <h3 id="j_24" name="mobilecollapsblockheader1_11" dsid="mobilecollapsblockheader1_11">
+                            Lecture - Date
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="mobileFooter mobilefooter2"
+            name="mobilefooter1" dsid="mobilefooter1" id="j_27" data-theme="a">
+                <!-- mobilenavbar2_16 -->
+                <div data-role="navbar" id="j_28" name="mobilenavbar2_16" dsid="mobilenavbar2_16"
+                class=" mobilenavbar2" data-theme="a" style="position: relative;">
+                    <ul>
+                        <!-- mobilenavbaritem4_17 -->
+                        <li>
+                            <a data-theme='a' data-icon='star' id="j_29" dsid="mobilenavbaritem4_17" name="mobilenavbaritem4_17">
+                            Latest
+                            </a>
+                        </li>
+                        <!-- mobilenavbaritem4_18 -->
+                        <li>
+                            <a data-theme='a' class='ui-btn-active' data-icon='plus' id="j_30" dsid="mobilenavbaritem4_18"
+                            name="mobilenavbaritem4_18">
+                            Capture
+                            </a>
+                        </li>
+                        <!-- mobilenavbaritem4_19 -->
+                        <li>
+                            <a data-theme='a' data-icon='star' id="j_31" dsid="mobilenavbaritem4_19" name="mobilenavbaritem4_19">
+                            Shared
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

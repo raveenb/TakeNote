@@ -1,0 +1,1 @@
+var _projectId = window.location.href.split("/")[4];

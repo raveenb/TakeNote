@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Capture
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"
+        />
+        <link href="res/lib/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="res/lib/jquerymobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.8.2.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.indexOf("Android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+            });
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.2.0/jquery.mobile-1.2.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/tiggzi.js">
+        </script>
+        <script type="text/javascript" src="res/lib/cordova.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="files/views/assets/js/SinlgyUtils.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/SinglyConnect.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="Capture" id="j_33" class="type-interior"
+        data-theme="a" data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="header" data-position="fixed" data-theme="a" name="mobileheader"
+            id="j_35" class='mobileHeader mobileheader3 '>
+                <h1 dsid="mobileheader">
+                    Capture
+                </h1>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="j_36" name="mobilecontainer" class="mobileContent mobilecontainer3"
+            dsid="mobilecontainer" data-theme=''>
+                <link href="Capture.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="Capture.js">
+                </script>
+                <!-- mobileimage_2 -->
+                <img class="mobileImage mobileimage2" src="files/views/assets/image/no-image.jpg"
+                id="j_37" dsid="mobileimage_2" name="mobileimage_2" />
+                <!-- mobiletextinput1_3 -->
+                <div data-role="fieldcontain" class="mobiletextinput1 ">
+                    <input type="text" name="mobiletextinput1_3" dsid="mobiletextinput1_3" id="j_38"
+                    value="Name" tabIndex="1" data-theme="a" class='input mobiletextinput1 ' />
+                </div>
+                <!-- mobiletextinput1_4 -->
+                <div data-role="fieldcontain" class="mobiletextinput2 ">
+                    <input type="text" name="mobiletextinput1_4" dsid="mobiletextinput1_4" id="j_39"
+                    value="Notes, Tags" tabIndex="2" data-theme="a" class='input mobiletextinput2 ' />
+                </div>
+                <!-- mobilebutton1_5 -->
+                <a data-role="button" name="mobilebutton1_5" dsid="mobilebutton1_5" class=' button mobilebutton2'
+                id='j_40' data-corners='true' data-mini='false' data-theme="a" tabIndex="3">
+                Save
+                </a>
+            </div>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="mobileFooter mobilefooter3"
+            name="mobilefooter1" dsid="mobilefooter1" id="j_41" data-theme="a">
+            </div>
+        </div>
+    </body>
+
+</html>
