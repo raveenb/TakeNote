@@ -7,6 +7,8 @@ from django.utils import dateparse, timezone
 
 from sendgrid.message import SendGridEmailMessage
 
+from django.core.mail import send_mail
+
 import urllib2
 
 import pprint
@@ -103,8 +105,9 @@ def upld_image(request, image):
         print 'webapp.views.upld_image - sending email using SendGrid'
         s = 'TakeNote(Beta) has uploaded your latest lecture notes to dropbox'
         b = 'Hello ' + request.user.first_name + ",\nTakeNote(Beta) has processed and uploaded the latest lecture notes to DropBox @ " + image.url + "\nHave Fun!"
-        email = SendGridEmailMessage(s, b, 'app@takenote.com', [request.user.email])
-        email.send()
+        send_mail(s, b, 'raveen.b@gmail.com', [request.user.email], fail_silently=False)
+        # email = SendGridEmailMessage(s, b, 'raveen.b@gmail.com', [request.user.email])
+        # email.send()
         pprint.pprint(email)
     except Exception as e:
         print 'Exception: webapp.views.upld_image - ' + str(e)
